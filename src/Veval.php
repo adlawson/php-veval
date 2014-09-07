@@ -62,12 +62,12 @@ class Veval
     {
         $files = [];
 
-        foreach (scandir(self::getUrl('')) as $filename) {
-            if (in_array($filename, ['.', '..'])) {
+        foreach (new DirectoryIterator(self::getUrl('')) as $file) {
+            if ($file->isDot()) {
                 continue;
             }
 
-            $files[$filename] = file_get_contents(self::getUrl($filename));
+            $files[$file->getFileName()] = file_get_contents(self::getUrl($file->getFileName()));
         }
 
         return new ArrayIterator($files);
