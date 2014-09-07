@@ -42,11 +42,17 @@ class Veval
     public static function execute($code, $name = null)
     {
         $fs  = self::getFileSystem();
-        $url = self::getUrl($name ?: md5(mt_rand()));
+        $url = self::getUrl(uniqid('', true));
 
         file_put_contents($url, $code);
 
         require $url;
+
+        // Don't require from named files in case of name reuse in HHVM
+        if ($name) {
+            file_put_contents(self::getUrl($name), $code);
+            unlink($url);
+        }
     }
 
     /**
@@ -56,12 +62,12 @@ class Veval
     {
         $files = [];
 
-        foreach (new DirectoryIterator(self::getUrl('')) as $file) {
-            if ($file->isDot()) {
+        foreach (scandir(self::getUrl('')) as $filename) {
+            if (in_array($filename, ['.', '..'])) {
                 continue;
             }
 
-            $files[$file->getFileName()] = file_get_contents(self::getUrl($file->getFileName()));
+            $files[$filename] = file_get_contents(self::getUrl($filename));
         }
 
         return new ArrayIterator($files);
