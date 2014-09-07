@@ -22,6 +22,9 @@ It can be installed in whichever way you prefer, but I recommend
 ```
 
 ## Documentation
+The **Veval** API is exposed as a collection of `Veval\` namespaced functions,
+though you may prefer to use `Veval::` to take advantage of autoloading and
+namespace aliasing (PHP < 5.6).
 ```php
 <?php
 
@@ -57,7 +60,7 @@ foreach (Veval\iterator() as $name => $content) {
     // Debug some things here
 }
 
-// Dump all to path ({$dir}/veval_{$name}.php)
+// Dump all to path ({$dir}/veval-{$name}.php)
 Veval\dump(sys_get_temp_dir());
 ```
 

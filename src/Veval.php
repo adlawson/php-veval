@@ -29,10 +29,8 @@ class Veval
      */
     public static function dump($dir)
     {
-        $dir = rtrim($dir, '/\\');
-
         foreach (self::iterator() as $name => $content) {
-            file_put_contents($dir . '/veval_' . $name . '.php', $content);
+            file_put_contents($dir . '/veval-' . $name . '.php', $content);
         }
     }
 
