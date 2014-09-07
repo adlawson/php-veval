@@ -65,6 +65,7 @@ Veval\dump(sys_get_temp_dir(), 'veval-%s.php');
 ```
 
 ### Warning
+<img src="http://media.giphy.com/media/wuOtkQMVrqdRS/giphy.gif" alt="Eval Warning" align="right" width=140/>
 Using **Veval**, just like eval, is considered dangerous to use if you're
 evaluating user input. Always be careful not to do this as it can open up quite
 a large hole in the security of your system.
