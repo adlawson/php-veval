@@ -1,0 +1,42 @@
+{
+    "name": "adlawson/veval",
+    "description": "Virtual eval",
+    "keywords": [
+        "code",
+        "eval",
+        "generate",
+        "generation",
+        "meta",
+        "metaprogramming",
+        "stream",
+        "virtual",
+        "wrapper"
+    ],
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Andrew Lawson",
+            "homepage": "http://adlawson.com",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "src/fn.php"
+        ],
+        "psr-0": {
+            "Veval": "src"
+        }
+    },
+    "require": {
+        "php": "~5.4",
+        "adlawson/vfs": "~0.9"
+    },
+    "require-dev": {
+        "adlawson/timezone": "~1.0",
+        "fabpot/php-cs-fixer": "~0.5",
+        "mockery/mockery": "~0.9",
+        "phpunit/phpunit": "~4.0"
+    }
+}
