@@ -62,17 +62,11 @@ class Veval
     {
         $files = [];
 
-        if (defined('HHVM_VERSION')) {
-            foreach (scandir(self::getUrl('')) as $filename) {
-                if (!in_array($filename, ['.', '..'])) {
-                    $files[$filename] = file_get_contents(self::getUrl($filename));
-                }
-            }
-        } else {
-            foreach (new DirectoryIterator(self::getUrl('')) as $file) {
-                if (!$file->isDot()) {
-                    $files[$file->getFileName()] = file_get_contents(self::getUrl($file->getFileName()));
-                }
+        foreach (new DirectoryIterator(self::getUrl('')) as $i => $file) {
+            if (self::SCHEME . ':' === $file->getFileName()) {
+                break;
+            } elseif (!$file->isDot()) {
+                $files[$file->getFileName()] = file_get_contents(self::getUrl($file->getFileName()));
             }
         }
 
