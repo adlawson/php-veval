@@ -1,0 +1,20 @@
+<phpunit bootstrap="./vendor/autoload.php"
+         colors="true"
+         stopOnError="true"
+         stopOnFailure="true">
+
+    <!-- Test suites -->
+    <testsuites>
+        <testsuite name="integration">
+            <directory suffix="Test.php">test/integration</directory>
+        </testsuite>
+    </testsuites>
+
+    <!-- Coverage filter -->
+    <filter>
+        <whitelist>
+            <directory>src</directory>
+        </whitelist>
+    </filter>
+
+</phpunit>
