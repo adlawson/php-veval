@@ -64,6 +64,11 @@ foreach (Veval\iterator() as $name => $content) {
 Veval\dump(sys_get_temp_dir(), 'veval-%s.php');
 ```
 
+### Warning
+Using **Veval**, just like eval, is considered dangerous to use if you're
+evaluating user input. Always be careful not to do this as it can open up quite
+a large hole in the security of your system.
+
 ## Contributing
 Contributions are accepted via Pull Request, but passing unit tests must be
 included before it will be considered for merge.
