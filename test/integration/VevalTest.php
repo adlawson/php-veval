@@ -44,6 +44,20 @@ class VevalTest extends TestCase
         $fs->unmount();
     }
 
+    public function testDumpWithPattern()
+    {
+        $scheme = 'vevaldump';
+        $code = '<?php "foo";';
+        Veval::execute($code, 'foo');
+
+        $fs = FileSystem::factory($scheme);
+        Veval::dump("$scheme://", '%s');
+
+        $this->assertEquals($code, file_get_contents("$scheme:///foo"));
+
+        $fs->unmount();
+    }
+
     public function testEvaluate()
     {
         Veval::execute(<<<'EOF'

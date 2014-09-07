@@ -60,8 +60,8 @@ foreach (Veval\iterator() as $name => $content) {
     // Debug some things here
 }
 
-// Dump all to path ({$dir}/veval-{$name}.php)
-Veval\dump(sys_get_temp_dir());
+// Dump all to path
+Veval\dump(sys_get_temp_dir(), 'veval-%s.php');
 ```
 
 ## Contributing

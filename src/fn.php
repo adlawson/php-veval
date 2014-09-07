@@ -21,10 +21,11 @@ function debug(callable $fn)
 
 /**
  * @param string $dir
+ * @param string $pattern
  */
-function dump($dir)
+function dump($dir, $pattern = 'veval-%s.php')
 {
-    return \Veval::dump($dir);
+    return \Veval::dump($dir, $pattern);
 }
 
 /**

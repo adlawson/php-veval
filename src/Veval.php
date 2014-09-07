@@ -26,11 +26,12 @@ class Veval
 
     /**
      * @param string $dir
+     * @param string $pattern
      */
-    public static function dump($dir)
+    public static function dump($dir, $pattern = 'veval-%s.php')
     {
         foreach (self::iterator() as $name => $content) {
-            file_put_contents($dir . '/veval-' . $name . '.php', $content);
+            file_put_contents($dir . '/' . sprintf($pattern, $name), $content);
         }
     }
 
