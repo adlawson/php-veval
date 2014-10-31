@@ -89,12 +89,12 @@ The content of this library is released under the **MIT License** by
 **Andrew Lawson**.<br/> You can find a copy of this license in
 [`LICENSE`][license] or at http://opensource.org/licenses/mit.
 
-[travis]: https://travis-ci.org/adlawson/veval.php
+[travis]: https://travis-ci.org/adlawson/php-veval
 [lang]: http://php.net
 [package]: https://packagist.org/packages/adlawson/veval
 [ico-license]: http://img.shields.io/packagist/l/adlawson/veval.svg?style=flat
 [ico-package]: http://img.shields.io/packagist/v/adlawson/veval.svg?style=flat
-[ico-build]: http://img.shields.io/travis/adlawson/veval.php/master.svg?style=flat
+[ico-build]: http://img.shields.io/travis/adlawson/php-veval/master.svg?style=flat
 [ico-engine]: http://img.shields.io/badge/php-~5.4-8892BF.svg?style=flat
-[issues]: https://github.com/adlawson/veval.php/issues
+[issues]: https://github.com/adlawson/php-veval/issues
 [license]: LICENSE
